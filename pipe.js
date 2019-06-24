@@ -1,0 +1,1 @@
+const pipe = (...functions) => arg => functions.reduce((res, f) => f(res), arg);
