@@ -1,8 +1,8 @@
-function deepFlatten() {
+function deepFlatten(arr) {
   return arr.reduce(
     (res, item) => [
       ...res,
-      ...(Array.isArray(item) ? steamrollArray(item) : [item])
+      ...(Array.isArray(item) ? deepFlatten(item) : [item])
     ],
     []
   );
